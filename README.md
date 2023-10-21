@@ -48,9 +48,6 @@ This documentation provides a detailed guide on setting up a Jenkins agent on an
 Reason: Terraform provides an Infrastructure as Code (IaC) approach, ensuring that cloud resources are provisioned consistently and reproducibly.
 
 ---
-Certainly! Here's the rephrased content integrated into the documentation:
-
----
 
 ## GitHub and Jenkins Integration
 
