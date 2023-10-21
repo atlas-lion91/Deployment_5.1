@@ -18,11 +18,41 @@ By: Khalil Elkharbibi
 - [Conclusion](#conclusion)
 
 ---
+## Purpose
 
-## Introduction
+### **Terraform and AWS Infrastructure**
 
-This documentation provides a detailed guide on setting up a Jenkins agent on an AWS EC2 instance using Terraform. We'll also cover the reasons behind each step and the choice of software/tools.
+Terraform is an Infrastructure as Code (IaC) tool that allows developers and operations teams to define, provision, and manage cloud infrastructure using a declarative configuration language. By using Terraform, you can ensure that your infrastructure is consistent, reproducible, and easily versioned.
 
+In this deployment:
+
+- **VPC (Virtual Private Cloud)**: Acts as an isolated virtual network within AWS, providing a controlled environment where resources are launched. It enhances security and allows for network customization.
+  
+- **Subnets**: These are subdivisions of the VPC's IP address range, allowing you to place resources in distinct network segments, often aligning with design considerations like availability or function separation.
+  
+- **EC2 Instances**: Virtual servers in Amazon's Elastic Compute Cloud (EC2) where the application and its supporting services run. In this deployment, one instance is dedicated to Jenkins, while the others host the application.
+  
+- **Security Groups**: Act as virtual firewalls, controlling inbound and outbound traffic to EC2 instances. By specifying allowed ports (e.g., 8080, 8000, 22), we ensure that only legitimate traffic reaches our application and Jenkins server.
+
+### **Jenkins and Continuous Integration/Continuous Deployment (CI/CD)**
+
+Jenkins is an open-source automation server that facilitates CI/CD, a development practice where developers integrate code into a shared repository frequently. This approach allows teams to detect and address issues early, ensuring rapid, reliable, and automated deployments.
+
+- **Jenkins Master and Agent**: The master handles task scheduling, while agents execute these tasks. By setting up a Jenkins agent, you can distribute the build load, run parallel builds, or even run builds in entirely different environments.
+
+- **Multibranch Pipeline**: This Jenkins feature automatically creates a pipeline for each branch in your repository. It's particularly useful for teams that use branch-based development strategies, as it ensures that every branch gets tested.
+
+### **GitHub Repository Management**
+
+GitHub is a platform for version control and collaboration, allowing multiple people to work on projects concurrently. In the context of this deployment:
+
+- The repository acts as the central source of truth, storing the application code, Jenkinsfile, and other essential files.
+  
+- By integrating Jenkins with GitHub, any change in the repository (like a code push) can trigger a Jenkins build, ensuring that the application is continuously tested and deployed.
+
+### **Why This Deployment Strategy?**
+
+> This deployment strategy ensures that the application is resilient, scalable, and easily maintainable. By automating infrastructure provisioning with Terraform and integrating CI/CD practices with Jenkins, the deployment process becomes more efficient, reducing manual errors and accelerating release cycles. The use of AWS services, like VPC and EC2, ensures that the application is hosted in a secure, scalable, and high-availability environment.
 ---
 
 ## Prerequisites
