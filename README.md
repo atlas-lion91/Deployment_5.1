@@ -90,10 +90,37 @@ Reason: These software installations ensure that the Jenkins instance has the ne
    - Jenkins will automatically scan the repository and build branches containing the Jenkinsfile.
    - Reason: Multibranch pipelines allow Jenkins to automatically recognize and execute Jenkinsfiles from different branches, facilitating CI/CD for multiple feature developments or versions.
 
+**Jenkins Build First Instance**
+
+![Screenshot 2023-10-20 223856](https://github.com/atlas-lion91/Deployment_5.1/assets/140761974/5d4bbb13-8f86-4b5a-b296-7815be68ee0b)
+
+
+![Screenshot 2023-10-20 215555](https://github.com/atlas-lion91/Deployment_5.1/assets/140761974/df7c4129-3597-4ad4-bbc9-30bdb9a21b1b)
+
+
+**Jenkins Agent Build Second Instance**
+
+![Screenshot 2023-10-20 222250](https://github.com/atlas-lion91/Deployment_5.1/assets/140761974/c397dbd4-ca12-4ba4-9ba6-75b93f20f69a)
+
+
+**Jenkins Agent Build Third Instance**
+
+![Screenshot 2023-10-20 222325](https://github.com/atlas-lion91/Deployment_5.1/assets/140761974/d57bb89f-3d9e-4a3a-a262-5e26a1ee36f8)
+
+---
+
+
+**Retail Banking Application Deployed on the Second Instance**
+
+![Screenshot 2023-10-20 222203](https://github.com/atlas-lion91/Deployment_5.1/assets/140761974/c135acde-1c1d-4c38-af96-15bd04ecc54a)
+
 2. **Deploying on the Third Instance**:
    - Use Jenkins to trigger a deployment script or tool that targets the third EC2 instance.
    - Ensure the third instance has the necessary environment and dependencies set up.
    - Reason: The third instance can serve as a staging or production environment, separate from the build and test environments.
+
+**Retail Banking Application Deployed on the Third Instance**
+![Screenshot 2023-10-20 222515](https://github.com/atlas-lion91/Deployment_5.1/assets/140761974/f8190dec-3e16-473e-a2e8-1b0dbe810bf5)
 
 ---
 
@@ -124,8 +151,11 @@ A Jenkins agent is a computational resource with a specific OS that Jenkins uses
 ## Troubleshooting
 
 1. **AWS Credentials**: Ensure that the AWS credentials provided in the Terraform configuration are correct and have the necessary permissions.
+
+  
 2. **Terraform State**: If there are discrepancies between the actual AWS resources and what Terraform believes is the state, consider using `terraform refresh` or checking the `terraform.tfstate` file.
 3. **Jenkins SSH Authentication**: Ensure that the private key used to authenticate the Jenkins agent matches the public key on the EC2 instance. Also, ensure the username (typically `ubuntu` for Ubuntu instances) is correct.
+![image](https://github.com/atlas-lion91/Deployment_5.1/assets/140761974/8a2a87b1-da7e-40d9-be9b-e6617f8eb93a)
 
 ---
 
