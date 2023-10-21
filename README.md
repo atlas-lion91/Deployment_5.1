@@ -48,6 +48,64 @@ This documentation provides a detailed guide on setting up a Jenkins agent on an
 Reason: Terraform provides an Infrastructure as Code (IaC) approach, ensuring that cloud resources are provisioned consistently and reproducibly.
 
 ---
+Certainly! Here's the rephrased content integrated into the documentation:
+
+---
+
+## GitHub and Jenkins Integration
+
+### Overview
+
+GitHub acts as the central repository from which Jenkins fetches files to orchestrate the build, test, and deployment processes for the URL Shortener application.
+
+### Modifications in the Repository for Jenkins Build Deployment_5.1
+
+For this deployment, the Jenkinsfile has been pre-configured to terminate the Gunicorn process and deploy the application from the first jenkins agent server during the "Clean" and "Deploy" stages. Our objective is to modify the Jenkinsfile to also include the termination of the Gunicorn process and deployment of the application from the second jenkins agent server.
+
+### Git Commands for Repository Setup and Modification
+
+```bash
+# Clone the repository
+git clone https://github.com/kura-labs-org/deployment_5.1.git
+
+# Navigate into the repository directory
+cd deployment_5.1/
+
+# Initialize a new Git repository
+git init
+
+# Set the remote URL to your GitHub repository
+git remote set-url origin https://github.com/atlas-lion91/Deployment_5.1.git
+
+# Fetch the latest changes from the remote repository
+git fetch
+
+# Push the changes to your repository
+git push --mirror
+
+# Create and switch to a new branch named 'second'
+git branch second
+git switch second
+
+# At this point, make the necessary edits to the Jenkinsfile
+
+# Commit the changes made to the Jenkinsfile
+git commit -a
+
+# Push the changes to the 'second' branch on the remote repository
+git push --set-upstream origin second
+
+# After verifying the changes, switch back to the 'main' branch
+git switch main
+
+# Merge the changes from the 'second' branch into 'main'
+git merge second
+
+# Push the merged changes to the 'main' branch on the remote repository
+git push
+```
+
+By following the above steps, you'll have successfully integrated your GitHub repository with Jenkins, ensuring that any changes made to the application are automatically reflected in the Jenkins build and deployment processes.
 
 ## Setting Up a Jenkins Agent
 
