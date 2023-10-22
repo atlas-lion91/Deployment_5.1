@@ -62,6 +62,9 @@ GitHub is a platform for version control and collaboration, allowing multiple pe
 - **Jenkins**: An open-source automation server used for continuous integration and continuous delivery (CI/CD).
 
 ---
+## System Diagram
+
+---
 
 ## Terraform Infrastructure Setup
 
