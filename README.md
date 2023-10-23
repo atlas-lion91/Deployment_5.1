@@ -64,6 +64,7 @@ GitHub is a platform for version control and collaboration, allowing multiple pe
 ---
 ## System Diagram
 
+![Deployment 5 1 Diagram drawio (1)](https://github.com/atlas-lion91/Deployment_5.1/assets/140761974/b35a1ab6-a4b4-4484-b53b-ce7e258e7c56)
 ---
 
 ## Terraform Infrastructure Setup
