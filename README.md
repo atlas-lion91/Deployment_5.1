@@ -17,7 +17,7 @@ By: Khalil Elkharbibi
 - [Troubleshooting](#troubleshooting)
 - [Conclusion](#conclusion)
 
----
+--- 
 ## Purpose
 
 ### **Terraform and AWS Infrastructure**
